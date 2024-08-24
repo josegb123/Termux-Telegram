@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Iniciar Termux X11
+termux-x11 :1 -xstartup "xfce4-session" -legacy-drawing &
+
+# Esperar un momento para asegurarse de que X11 está listo
+sleep 5
+
+# Iniciar Telegram-Desktop en Debian
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
