@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Matar las primeras 5 instancias de VNC si están corriendo
+for i in {1..5}
+do
+    vncserver -kill :$i
+done
+
+# Iniciar el servidor VNC
+vncserver -listen tcp :1
+
+# Iniciar Telegram-Desktop en Debian
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
