@@ -27,7 +27,8 @@ I opted to create a Proot instance with Debian, as Ubuntu does not include the `
 
 1. **Install the Yisus graphical environment (if you already have one, it’s not necessary):**
    - Follow the instructions in the [Yisus7u7 - Termux Desktop XFCE](https://github.com/Yisus7u7/termux-desktop-xfce) repository.
-      or you can install at your own by execute
+
+   - or you can install at your own by execute
 
    ```bash
    pkg update && pkg upgrade -y && pkg install x11-repo && pkg install xfce4 xfce4 tigervnc
@@ -60,12 +61,15 @@ set vnc password
 ```
 vncpasswd
 ```
+set your password (minimum 6 characters) and congrats, you have your own xfce4-termux desktop
 
-Congrats, you have your own xfce4-termux desktop
-
-2. **Create a Debian instance and install the necessary packages:**
+2. **Create a Debian proot instance and install the necessary packages:**
    - Packages: `telegram-desktop`, `fonts-open-sans`, `noto-sans`.
-
+   
+   ```bash
+      pkg install proot-distro && proot-distro install debian && proot-distro login debian -- "apt update && apt upgrade -y && apt install telegram desktop fonts-open-sans noto-sans -y"
+   ```
+  
 3. **Set up the DISPLAY variable and link the download folder:**
    - Set the `DISPLAY=:1` variable in both Termux and the Debian instance:
      ```bash
