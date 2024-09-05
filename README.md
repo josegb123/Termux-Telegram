@@ -36,7 +36,7 @@ Opté por crear una instancia de Proot con Debian, ya que Ubuntu no trae el paqu
      ```
    - Inicia la instancia de Debian con las siguientes opciones:
      ```bash
-     proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads
+     proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
      ```
    - **Explicación de los parámetros:**
      - `--env DISPLAY=:1`: Habilita la variable necesaria para la pantalla.
@@ -143,7 +143,7 @@ termux-x11 :1 -xstartup "xfce4-session" -legacy-drawing
 Con el entorno gráfico activo, inicia Telegram-Desktop en la instancia de Proot con Debian:
 
 ```bash
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 ### 5. Automatización del Proceso
