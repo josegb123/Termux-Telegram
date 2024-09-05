@@ -87,7 +87,7 @@ done
 vncserver -listen tcp :1
 
 # Iniciar Telegram-Desktop en Debian
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 **3.** Haz que el script sea ejecutable:
@@ -188,7 +188,7 @@ termux-x11 :1 -xstartup "xfce4-session" -legacy-drawing &
 sleep 5
 
 # Iniciar Telegram-Desktop en Debian
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 **3.** Haz que el script sea ejecutable:
