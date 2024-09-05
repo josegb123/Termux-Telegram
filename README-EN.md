@@ -38,7 +38,7 @@ I opted to create a Proot instance with Debian, as Ubuntu does not include the `
      ```
    - Start the Debian instance with the following options:
      ```bash
-     proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads
+     proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
      ```
    - **Explanation of the parameters:**
      - `--env DISPLAY=:1`: Enables the necessary display variable.
@@ -89,7 +89,7 @@ done
 vncserver -listen tcp :1
 
 # Start Telegram-Desktop on Debian
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 **3.** Make the script executable:
@@ -141,7 +141,7 @@ termux-x11 :1 -xstartup "xfce4-session" -legacy-drawing
 With the graphical environment active, start Telegram-Desktop in the Proot Debian instance:
 
 ```bash
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 ### 5. Automating the Process
@@ -186,7 +186,7 @@ termux-x11 :1 -xstartup "xfce4-session" -legacy-drawing &
 sleep 5
 
 # Start Telegram-Desktop on Debian
-proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind $HOME/storage/Download:/root/Downloads -- telegram-desktop
+proot-distro login debian --env DISPLAY=:1 --shared-tmp --bind /storage/emulated/0/Download:/root/Downloads -- telegram-desktop
 ```
 
 **3.** Make the script executable:
