@@ -27,6 +27,41 @@ I opted to create a Proot instance with Debian, as Ubuntu does not include the `
 
 1. **Install the Yisus graphical environment (if you already have one, it’s not necessary):**
    - Follow the instructions in the [Yisus7u7 - Termux Desktop XFCE](https://github.com/Yisus7u7/termux-desktop-xfce) repository.
+      or you can install at your own by execute
+
+   ```bash
+   pkg update && pkg upgrade -y && pkg install x11-repo && pkg install xfce4 xfce4 tigervnc
+   ```
+   then create the vnc session
+   ```bash
+   mkdir ~/.vnc && nano ~/.vnc/xstarup
+   ```
+   paste this
+# 
+   ```
+   #!/data/data/com.termux/files/usr/bin/sh
+## This file is executed during VNC server
+## startup.
+
+# Launch terminal emulator Aterm.
+# Requires package 'aterm'.
+#aterm -geometry 80x24+10+10 -ls &
+
+# Launch Tab Window Manager.
+# Requires package 'xorg-twm'.
+xfce4-session &
+xhost + &
+```
+
+ctrl + o and ctrl + x 
+
+set vnc password
+
+```
+vncpasswd
+```
+
+Congrats, you have your own xfce4-termux desktop
 
 2. **Create a Debian instance and install the necessary packages:**
    - Packages: `telegram-desktop`, `fonts-open-sans`, `noto-sans`.
